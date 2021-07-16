@@ -1863,33 +1863,6 @@ function openURL(url) {
 
 > Note that the use of non-public APIs is not permitted on the App Store, that's why we don't even test these but we are allowed to use them for our dynamic analysis.
 
-##### Using IDB
-
-For this you can also use [IDB](https://www.idbtool.com/ "IDB"):
-
-- Start IDB, connect to your device and select the target app. You can find details in the [IDB documentation](https://www.idbtool.com/documentation/setup.html "IDB Setup").
-- Go to the **URL Handlers** section. In **URL schemes**, click **Refresh**, and on the left you'll find a list of all custom schemes defined in the app being tested. You can load these schemes by clicking **Open**, on the right side. By simply opening a blank URI scheme (e.g., opening `myURLscheme://`), you can discover hidden functionality (e.g., a debug window) and bypass local authentication.
-
-##### Using Needle
-
-Needle can be used to test custom URL schemes, the following module can be used to open the URLs (URIs):
-
-```bash
-[needle] >
-[needle] > use dynamic/ipc/open_uri
-[needle][open_uri] > show options
-
-  Name  Current Value  Required  Description
-  ----  -------------  --------  -----------
-  URI                  yes       URI to launch, eg tel://123456789 or http://www.google.com/
-
-[needle][open_uri] > set URI "myapp://testpayload'"
-URI => "myapp://testpayload'"
-[needle][open_uri] > run
-```
-
-Manual fuzzing can be performed against the URL scheme to identify input validation and memory corruption bugs.
-
 #### Identifying and Hooking the URL Handler Method
 
 If you can't look into the original source code you will have to find out yourself which method does the app use to handle the URL scheme requests that it receives. You cannot know if it is an Objective-C method or a Swift one, or even if the app is using a deprecated one.
@@ -2243,16 +2216,6 @@ OK!
 ```
 
 The script will detect if a crash occurred. On this run it did not detect any crashed but for other apps this could be the case. We would be able to inspect the crash reports in `/private/var/mobile/Library/Logs/CrashReporter` or in `/tmp` if it was moved by the script.
-
-##### Using IDB
-
-In the **URL Handlers** section, go to the **Fuzzer** tab. On the left side default IDB payloads are listed. Once you have generated your payload list (e.g. using FuzzDB), go to the **Fuzz Template** section in the left bottom panel and define a template. Use `$@$` to define an injection point, for example:
-
-```bash
-myURLscheme://$@$
-```
-
-While the URL scheme is being fuzzed, watch the logs (see the section "[Monitoring System Logs](0x06b-Basic-Security-Testing.md#monitoring-system-logs "Monitoring System Logs")" of the chapter "iOS Basic Security Testing" to observe the impact of each payload. The history of used payloads is on the right side of the IDB "Fuzzer" tab.
 
 ## Testing iOS WebViews (MSTG-PLATFORM-5)
 

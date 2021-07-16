@@ -994,13 +994,13 @@ Radare2 offers a **Graph Mode** that is very useful to follow the flow of the co
 
 <img src="Images/Chapters/0x05b/r2_graphmode.png" width="600" />
 
-This is only a selection of some radare2 commands to start getting some basic information from Android binaries. Radare2 is very powerful and has dozens of commands that you can find on the [radare2 command documentation](https://radare.gitbooks.io/radare2book/basic_commands/intro.html "radare2 command documentation"). Radare2 will be used throughout the guide for different purposes such as reversing code, debugging or performing binary analysis. We will also use it in combination with other frameworks, especially Frida (see the r2frida section for more information).
+This is only a selection of some radare2 commands to start getting some basic information from Android binaries. Radare2 is very powerful and has dozens of commands that you can find on the [radare2 command documentation](https://book.rada.re/basic_commands/intro.html "radare2 command documentation"). Radare2 will be used throughout the guide for different purposes such as reversing code, debugging or performing binary analysis. We will also use it in combination with other frameworks, especially Frida (see the r2frida section for more information).
 
-Please refer to the chapter "[Tampering and Reverse Engineering on Android](0x05c-Reverse-Engineering-and-Tampering.md)" for more detailed use of radare2 on Android, especially when analyzing native libraries. You may also want to read the [official radare2 book](https://radare.gitbooks.io/radare2book/content/ "Radare2 book").
+Please refer to the chapter "[Tampering and Reverse Engineering on Android](0x05c-Reverse-Engineering-and-Tampering.md)" for more detailed use of radare2 on Android, especially when analyzing native libraries. You may also want to read the [official radare2 book](https://book.rada.re/ "Radare2 book").
 
 #### Radare2 (iOS)
 
-[Radare2](https://github.com/radare/radare2 "Radare2") is a complete framework for reverse-engineering and analyzing binaries. The installation instructions can be found in the GitHub repository. To learn more on radare2 you may want to read the [official radare2 book](https://radare.gitbooks.io/radare2book/content/ "Radare2 book").
+[Radare2](https://github.com/radare/radare2 "Radare2") is a complete framework for reverse-engineering and analyzing binaries. The installation instructions can be found in the GitHub repository. To learn more on radare2 you may want to read the [official radare2 book](https://book.rada.re/ "Radare2 book").
 
 ### RMS Runtime Mobile Security
 
@@ -1281,6 +1281,10 @@ Learn more about [rooting your device with Magisk](#rooting-with-magisk "Rooting
 
 A Cydia Substrate Module used to check for commonly known indications of root - <https://github.com/devadvance/rootcloakplus>
 
+### Scrcpy
+
+[Scrcpy](https://github.com/Genymobile/scrcpy "Scrcpy") provides display and control of Android devices connected over USB (or [TCP/IP](https://www.genymotion.com/blog/open-source-project-scrcpy-now-works-wirelessly/ "Scrcpy now works wirelessly")). It does not require any root access and it works on GNU/Linux, Windows and macOS.
+
 ### SSLUnpinning
 
 An Xposed Module to bypass SSL certificate pinning - <https://github.com/ac-pm/SSLUnpinning_Xposed>
@@ -1341,7 +1345,7 @@ A tool to dump all the cookies from the binary Cookies.binarycookies file - <htt
 
 ### Burp Suite Mobile Assistant
 
-A tool to bypass certificate pinning and is able to inject into apps - <https://portswigger.net/burp/help/mobile_testing_using_mobile_assistant.html>
+A tool to bypass certificate pinning and is able to inject into apps - <https://portswigger.net/burp/documentation/desktop/tools/mobile-assistant>
 
 ### class-dump
 
@@ -1550,14 +1554,6 @@ An automated wrapper script for patching iOS applications (IPA files) and work o
 
 A tool to perform runtime analysis of iOS applications - <https://cydia.radare.org/pool/main/g/gdb/>
 
-### IDB
-
-[IDB](https://www.idbtool.com "IDBTool") is an open source tool to simplify some common tasks for iOS app security assessments and research. The [installation instructions for IDB](https://www.idbtool.com/installation/ "IDB Installation") are available in the documentation.
-
-Once you click on the button **Connect to USB/SSH device** in IDB and key in the SSH password in the terminal where you started IDB is ready to go. You can now click on **Select App...**, select the app you want to analyze and get initial meta information of the app. Now you are able to do binary analysis, look at the local storage and investigate IPC.
-
-Please keep in mind that IDB might be unstable and crash after selecting the app.
-
 ### iFunBox
 
 [iFunBox](http://www.i-funbox.com/ "iFunBox") is a file and app management tool that supports iOS. You can [download it for Windows and macOS](http://www.i-funbox.com/en_download.html "iFunBox").
@@ -1755,7 +1751,7 @@ There are installation instructions as well for Ubuntu Linux 18.04 on [LinuxHint
 
 ### Burp Suite
 
-Burp Suite is an integrated platform for performing security testing mobile and web applications - <https://portswigger.net/burp/download.html>
+Burp Suite is an integrated platform for performing security testing mobile and web applications - <https://portswigger.net/burp/releases>
 
 Its tools work together seamlessly to support the entire testing process, from initial mapping and analysis of attack surfaces to finding and exploiting security vulnerabilities. Burp Proxy operates as a web proxy server for Burp Suite, which is positioned as a man-in-the-middle between the browser and web server(s). Burp Suite allows you to intercept, inspect, and modify incoming and outgoing raw HTTP traffic.
 
@@ -1776,7 +1772,7 @@ A script to intercept and modify non-HTTP protocols through Burp and others with
 
 ### OWASP ZAP
 
-[OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project "OWASP ZAP") (Zed Attack Proxy) is a free security tool which helps to automatically find security vulnerabilities in web applications and web services - <https://github.com/zaproxy/zaproxy>
+[OWASP ZAP](https://owasp.org/www-project-zap/ "OWASP ZAP") (Zed Attack Proxy) is a free security tool which helps to automatically find security vulnerabilities in web applications and web services - <https://github.com/zaproxy/zaproxy>
 
 ### tcpdump
 
